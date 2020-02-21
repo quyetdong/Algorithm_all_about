@@ -1,7 +1,38 @@
-/* eslint no-undef: 0 */
 // //// Check truthy predicate on all elements of collection //////////////
-const booWho = require('../9_BooWho.js');
-const uniteUnique = require('../10_SortedUnion.js');
+/* eslint no-undef: 0 */
+
+const everythingBeTrue = require('../OldScripts/EverythingBeTrue');
+const booWho = require('../NewScripts/9_BooWho');
+const uniteUnique = require('../NewScripts/10_SortedUnion');
+
+// ////////////////////////////////////////////
+test('test everything be true 1', () => {
+  expect(everythingBeTrue(
+    [
+      { user: 'Tinky-Winky', sex: 'male' },
+      { user: 'Dipsy', sex: 'male' },
+      { user: 'Laa-Laa', sex: 'female' },
+      { user: 'Po', sex: 'female' },
+    ],
+    'sex',
+  )).toBe(true);
+});
+
+test('test everything be true 2', () => {
+  expect(everythingBeTrue(
+    [
+      { user: 'Tinky-Winky', sex: 'male' },
+      { user: 'Dipsy' },
+      { user: 'Laa-Laa', sex: 'female' },
+      { user: 'Po', sex: 'female' },
+    ],
+    'sex',
+  )).toBe(false);
+});
+
+test('test everything be true 3', () => {
+  expect(everythingBeTrue([{ single: 'double' }, { single: NaN }], 'single')).toBe(false);
+});
 
 // //////////////////////////////////////
 test('check boolean primitive 1', () => {
