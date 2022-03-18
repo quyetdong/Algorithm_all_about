@@ -42,7 +42,9 @@ function sortByLength(inputArray) {
     return sortedArray;
 }
 
+
 // Bubble sort
+// compare every pair of emlements located next to each other
 function sortByLength1(inputArray) {
     for (let j = 1; j < inputArray.length; j += 1) {
         for (let i = 0; i < inputArray.length - j; i += 1) {
